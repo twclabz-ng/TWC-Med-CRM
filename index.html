@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TWC MedCRM - Redirecting...</title>
+    <title>Redirecting to TWC MedCRM...</title>
     <link rel="icon" type="image/png" href="https://z-cdn-media.chatglm.cn/files/b294a7ca-ad32-4be0-a147-19aa28af5078.png">
     <style>
         body {
@@ -16,6 +16,8 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
+            text-align: center;
+            padding: 20px;
         }
         .spinner {
             border: 3px solid rgba(255, 255, 255, 0.1);
@@ -24,7 +26,7 @@
             width: 40px;
             height: 40px;
             animation: spin 1s linear infinite;
-            margin-bottom: 20px;
+            margin: 20px 0;
         }
         @keyframes spin {
             0% { transform: rotate(0deg); }
@@ -35,20 +37,24 @@
             text-decoration: none;
             margin-top: 15px;
             font-size: 14px;
+            font-weight: 500;
         }
+        h1 { font-size: 22px; margin: 0; font-weight: 800; }
+        p { font-size: 14px; color: #aaa; margin: 5px 0 0; }
     </style>
     <script>
         // REPLACE THIS with your deployed Google Apps Script Web App URL
-        const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxl4l0pjDK0-IfsMBfXZP7KwC0PkUFOOqLjyy5VtQEZZtn_bONoendpB7xZb4XcF8kqwA/exec';
+        const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID_HERE/exec';
         
-        // Immediately redirect the user to the GAS app
+        // Immediately redirect the user
         window.location.replace(GAS_WEB_APP_URL);
     </script>
 </head>
 <body>
     <img src="https://z-cdn-media.chatglm.cn/files/b294a7ca-ad32-4be0-a147-19aa28af5078.png" width="64" alt="TWC">
-    <div class="spinner" style="margin-top: 20px;"></div>
-    <div>Redirecting to secure portal...</div>
+    <h1>TWC MedCRM</h1>
+    <p>Redirecting to secure portal...</p>
+    <div class="spinner"></div>
     <a href="#" onclick="window.location.replace(GAS_WEB_APP_URL); return false;">Click here if you are not redirected</a>
 </body>
 </html>
