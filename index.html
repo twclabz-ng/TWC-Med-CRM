@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TWC MedCRM - Redirecting...</title>
+    <link rel="icon" type="image/png" href="https://z-cdn-media.chatglm.cn/files/b294a7ca-ad32-4be0-a147-19aa28af5078.png">
+    <style>
+        body {
+            background: radial-gradient(circle at 30% 20%, #1a5a5a 0%, #0F3D3E 40%, #07292a 100%);
+            color: white;
+            font-family: system-ui, -apple-system, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .spinner {
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            border-top: 3px solid #14B8A6;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        a {
+            color: #14B8A6;
+            text-decoration: none;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+    </style>
+    <script>
+        // REPLACE THIS with your deployed Google Apps Script Web App URL
+        const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID_HERE/exec';
+        
+        // Immediately redirect the user to the GAS app
+        window.location.replace(GAS_WEB_APP_URL);
+    </script>
+</head>
+<body>
+    <img src="https://z-cdn-media.chatglm.cn/files/b294a7ca-ad32-4be0-a147-19aa28af5078.png" width="64" alt="TWC">
+    <div class="spinner" style="margin-top: 20px;"></div>
+    <div>Redirecting to secure portal...</div>
+    <a href="#" onclick="window.location.replace(GAS_WEB_APP_URL); return false;">Click here if you are not redirected</a>
+</body>
+</html>
