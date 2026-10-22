@@ -1,60 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting to TWC MedCRM...</title>
-    <link rel="icon" type="image/png" href="https://z-cdn-media.chatglm.cn/files/b294a7ca-ad32-4be0-a147-19aa28af5078.png">
-    <style>
-        body {
-            background: radial-gradient(circle at 30% 20%, #1a5a5a 0%, #0F3D3E 40%, #07292a 100%);
-            color: white;
-            font-family: system-ui, -apple-system, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            text-align: center;
-            padding: 20px;
-        }
-        .spinner {
-            border: 3px solid rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            border-top: 3px solid #14B8A6;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 20px 0;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        a {
-            color: #14B8A6;
-            text-decoration: none;
-            margin-top: 15px;
-            font-size: 14px;
-            font-weight: 500;
-        }
-        h1 { font-size: 22px; margin: 0; font-weight: 800; }
-        p { font-size: 14px; color: #aaa; margin: 5px 0 0; }
-    </style>
-    <script>
-        // REPLACE THIS with your deployed Google Apps Script Web App URL
-        const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxl4l0pjDK0-IfsMBfXZP7KwC0PkUFOOqLjyy5VtQEZZtn_bONoendpB7xZb4XcF8kqwA/exec';
-        
-        // Immediately redirect the user
-        window.location.replace(GAS_WEB_APP_URL);
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+<meta name="theme-color" content="#0F3D3E">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="TWC MedCRM">
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" type="image/png" href="https://z-cdn-media.chatglm.cn/files/b294a7ca-ad32-4be0-a147-19aa28af5078.png">
+<title>TWC MedCRM — Healthcare CRM</title>
+<style>
+  :root{ --brand:#14B8A6; --deep:#0F3D3E; }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0}
+  body{
+    font-family:'DM Sans',system-ui,sans-serif;
+    background:radial-gradient(circle at 30% 20%,#1a5a5a 0%,#0F3D3E 40%,#07292a 100%);
+    color:#fff;display:flex;align-items:center;justify-content:center;flex-direction:column;
+    overflow:hidden;text-align:center;padding:24px;
+  }
+  .logo{
+    width:84px;height:84px;border-radius:20px;background:rgba(255,255,255,.06);
+    border:1.5px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;
+    margin-bottom:20px;animation:pulse 2.4s ease-in-out infinite;
+  }
+  .logo img{width:46px;height:46px;object-fit:contain}
+  @keyframes pulse{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(20,184,166,.4)}50%{transform:scale(1.04);box-shadow:0 0 0 16px rgba(20,184,166,0)}}
+  h1{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;letter-spacing:-.02em;margin:0 0 6px}
+  p{color:rgba(255,255,255,.6);font-size:13px;margin:0 0 22px;max-width:340px}
+  .bar{width:200px;height:3px;background:rgba(255,255,255,.1);border-radius:4px;overflow:hidden;margin:0 auto 16px}
+  .bar::after{content:'';display:block;height:100%;width:40%;background:linear-gradient(90deg,transparent,#14B8A6,transparent);animation:load 1.2s ease-in-out infinite}
+  @keyframes load{0%{transform:translateX(-100%)}100%{transform:translateX(350%)}}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;background:#14B8A6;color:#fff;border:none;
+    border-radius:10px;padding:13px 22px;font-size:14px;font-weight:700;cursor:pointer;
+    font-family:'DM Sans',sans-serif;text-decoration:none;transition:background .15s;
+  }
+  .btn:hover{background:#0D9488}
+  .hint{color:rgba(255,255,255,.4);font-size:11px;margin-top:18px}
+  #err{display:none;color:#F97362;font-size:12px;margin-top:14px;max-width:340px}
+  iframe{display:none}
+</style>
 </head>
 <body>
-    <img src="https://z-cdn-media.chatglm.cn/files/b294a7ca-ad32-4be0-a147-19aa28af5078.png" width="64" alt="TWC">
-    <h1>TWC MedCRM</h1>
-    <p>Redirecting to secure portal...</p>
-    <div class="spinner"></div>
-    <a href="#" onclick="window.location.replace(GAS_WEB_APP_URL); return false;">Click here if you are not redirected</a>
+  <div class="logo"><img src="https://z-cdn-media.chatglm.cn/files/b294a7ca-ad32-4be0-a147-19aa28af5078.png" alt="TWC"></div>
+  <h1>TWC MedCRM</h1>
+  <p>Healthcare CRM · Powered by Google Workspace</p>
+  <div class="bar"></div>
+  <div id="status" style="color:rgba(255,255,255,.5);font-size:11px;margin-bottom:18px">Loading your workspace…</div>
+  <a id="launch" class="btn" href="#" target="_blank" rel="noopener" style="display:none">
+    <i class="fas fa-external-link-alt"></i> Open App
+  </a>
+  <div id="err"></div>
+
+<script>
+/* ---- CONFIG: paste your GAS Web App URL here ---- */
+var GAS_URL = "https://script.google.com/macros/s/XXXXXXXXXXXXXXXXXXXX/exec";
+
+function setErr(m){var e=document.getElementById('err');e.textContent=m;e.style.display='block';document.getElementById('status').textContent='';}
+
+/* Register service worker for PWA installability */
+if('serviceWorker' in navigator){
+  window.addEventListener('load',function(){
+    navigator.serviceWorker.register('./sw.js').catch(function(){});
+  });
+}
+
+/* Try to embed the GAS app in a full-screen iframe; fall back to redirect. */
+(function(){
+  var launch=document.getElementById('launch');
+  launch.href=GAS_URL;
+  try{
+    var f=document.createElement('iframe');
+    f.src=GAS_URL;
+    f.style.cssText='position:fixed;inset:0;border:0;width:100%;height:100%;z-index:999';
+    f.setAttribute('allow','clipboard-write; camera; geolocation; fullscreen');
+    f.onload=function(){
+      document.getElementById('status').textContent='';
+      document.body.style.background='#fff';
+    };
+    f.onerror=function(){ fallBack(); };
+    document.body.appendChild(f);
+    setTimeout(function(){
+      document.getElementById('status').textContent='Connecting to Google Apps Script…';
+    },200);
+    /* Safety: if iframe hasn't signalled readiness in 6s, show open button too. */
+    setTimeout(function(){ launch.style.display='inline-flex'; }, 6000);
+  }catch(e){ fallBack(); }
+
+  function fallBack(){
+    document.getElementById('status').innerHTML='Your secure workspace is ready.';
+    launch.style.display='inline-flex';
+    /* Auto-redirect after 1.2s if iframe embedding is blocked. */
+    setTimeout(function(){ window.location.href=GAS_URL; },1200);
+  }
+})();
+</script>
 </body>
 </html>
