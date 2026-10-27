@@ -1,32 +1,39 @@
 {
-  "id": "https://twclabz-ng.github.io/twc-medcrm/",
+  "id": "/",
   "name": "TWC MedCRM — Healthcare CRM",
-  "short_name": "TWCMedCRM",
-  "description": "Healthcare CRM platform with Google Apps Script backend and multi-tenant management.",
-  "start_url": "https://twclabz-ng.github.io/twc-medcrm/",
-  "scope": "https://twclabz-ng.github.io/twc-medcrm/",
+  "short_name": "TWC MedCRM",
+  "description": "Multi-Tenant Healthcare CRM & SaaS Platform powered by Google Workspace",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "orientation": "portrait",
+  "orientation": "any",
   "background_color": "#0F3D3E",
   "theme_color": "#0F3D3E",
   "icons": [
     {
-      "src": "https://twclabz-ng.github.io/twc-medcrm/logo.png",
+      "src": "/assets/aistudio/logo_4a66d5a3.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "https://twclabz-ng.github.io/twc-medcrm/logo.png",
+      "src": "/assets/aistudio/logo_4a66d5a3.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "https://twclabz-ng.github.io/twc-medcrm/logo.png",
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any"
     }
-  ]
+  ],
+  "categories": ["medical", "business", "productivity"]
 }
